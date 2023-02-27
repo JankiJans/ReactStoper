@@ -1,8 +1,10 @@
+import Container from "./components/Container/Container";
+
 const App = () => {
   return (
-    <div>
+    <Container>
       <h1>Hi there!</h1>
-    </div>
+    </Container>
   )
 };
 
