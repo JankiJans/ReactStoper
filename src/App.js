@@ -1,9 +1,11 @@
 import Container from "./components/Container/Container";
+import Timer from "./components/Stopwatch/Stopwatch";
+
 
 const App = () => {
   return (
     <Container>
-      <h1>Hi there!</h1>
+      <Timer/>
     </Container>
   )
 };
