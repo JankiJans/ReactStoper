@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Button from '../Buttons/Buttons';
 import formatTime from '../TimeConverter/TimeConverter';
 
-const Timer = () => {
-  // wyświetla czas przechowywany w stanie time w formacie HH:MM:SS:MS
+const Timer = () => { // wyświetla czas przechowywany w stanie time w formacie HH:MM:SS:MS
   const [time, setTime] = useState(0); //Za pomocą hooka useState() definiowany jest stan time z domyślną wartością 0
-  const [isRunning, setIsRunning] = useState(false); //Za pomocą hooka useState() definiowany jest stan isRunning z domyślną wartością false
+  const [isRunning, setIsRunning] = useState(false); //isRunning sprawdza czy stoper jest uruchomiony a setIsRunning zmienia stan isRunning na true lub false
 
   useEffect(() => {
-    let timeGo; //zmienna która przechowuje wartośći setInterval z hooka useEffect()
+    let timeGo; //zmienna która przechowuje wartośći setInterval z hooka useEffect() w zależności od stanu isRunning (czyli czy stoper jest uruchomiony czy nie)
 
     if (isRunning) {
       timeGo = setInterval(() => setTime((prevValue) => prevValue + 10), 10); //Za pomocą hooka useEffect() definiowana jest funkcja, która co 10ms zwiększa wartość stanu time o 10
@@ -27,7 +26,7 @@ const Timer = () => {
   const handleReset = () => { //funkcja która zmienia stan time na 0 (czyli sprawdza czy stoper jest zresetowany)
     setTime(0);
   };
-  
+
   return (
     <div>
       <div>{formatTime(time)}</div>

@@ -1,12 +1,18 @@
-.button {
+.buttonWrapper {
     display: inline-block;
+    padding: 15px 15px 0 0;
+    
+}
+
+
+.button {
     outline: 0;
     border: none;
     cursor: pointer;
     font-weight: 600;
     border-radius: 4px;
     font-size: 13px;
-    height: 30px;
+    height: 35px;
     background-color: #9147ff;
     color: white;
     padding: 0 20px;
