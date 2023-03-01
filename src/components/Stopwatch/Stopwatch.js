@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../Buttons/Buttons';
 import formatTime from '../TimeConverter/TimeConverter';
+import styles from './StopWatch.module.scss';
+
 
 const Timer = () => { // wyświetla czas przechowywany w stanie time w formacie HH:MM:SS:MS
   const [time, setTime] = useState(0); //Za pomocą hooka useState() definiowany jest stan time z domyślną wartością 0
@@ -29,7 +31,7 @@ const Timer = () => { // wyświetla czas przechowywany w stanie time w formacie 
 
   return (
     <div>
-      <div>{formatTime(time)}</div>
+      <div className={styles.time}>{formatTime(time)}</div>
       <Button action={handleStart}>Start</Button>
       <Button action={handleStop}>Stop</Button>
       <Button action={handleReset}>Reset</Button>
